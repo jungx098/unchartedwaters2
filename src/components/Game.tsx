@@ -174,7 +174,7 @@ export function Game({
     blockAddEventListener(document, ["keydown", "keyup", "keypress"]);
     const db = (database.current = await createIdbFileSystem(mod, 1));
     const { fs, main } = await createDos(canvas.current!);
-    await fs.extract(`/static/game/${gameFile}`);
+    await fs.extract(`./static/game/${gameFile}`);
     const saveFileBody = await db.load(saveFile);
     if (saveFileBody) {
       // Overwrite Save File
